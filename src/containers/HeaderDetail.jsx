@@ -19,21 +19,21 @@ function HeaderDetail() {
     function onNotCompany(){ //companyMenu의 상태가 true인 것을 다시 false로 바뀌도록 해준다.
         setCompanyMenu(false);  
     }
-
-    function onNotBusiness(){ //businessMenu의 상태가 true로 바뀌도록 해준다.
-        setBusinessMenu(false);  
-    }
-
-    function onBusiness(){ //businessMenu의 상태가 true인 것을 다시 false로 바뀌도록 해준다.
+    
+    function onBusiness(){  //businessMenu의 상태가 true로 바뀌도록 해준다.    
         setBusinessMenu(true); 
     }
 
-    function onNotNotice(){ //noticeMenu 상태가 true로 바뀌도록 해준다.
-        setNoticeMenu(false);  
+    function onNotBusiness(){   //businessMenu의 상태가 true인 것을 다시 false로 바뀌도록 해준다.            
+        setBusinessMenu(false);  
     }
 
-    function onNotice(){ //noticeMenu 상태가 true인 것을 다시 false로 바뀌도록 해준다.
+    function onNotice(){  //noticeMenu 상태가 true로 바뀌도록 해준다. 
         setNoticeMenu(true); 
+    }
+
+    function onNotNotice(){ //noticeMenu 상태가 true인 것을 다시 false로 바뀌도록 해준다.
+        setNoticeMenu(false);  
     }
 
     //by 이방원 
