@@ -22,18 +22,14 @@ const HeaderForm = ({onCompany,
                     companyMenu, 
                     businessMenu, 
                     noticeMenu,
-                    menuBtn,
-                    menuState}) => {
+                    }) => {
 
-                        console.log(menuState)
+                    
     return(
         <StyledNavbar>
             <Link to='/'>
                 <StyledBrandImg src='https://www.teamfresh.co.kr/resources/assets/img/logo.png'/>
             </Link>
-            <StyledButton onClick={menuBtn} >
-                <StyledBtnSpan/>
-            </StyledButton>
             <StyledNavCollapse>
                 <StyledNavbarUl>
                     <StyledNavbarLi onMouseLeave={onNotCompany} onMouseEnter={onCompany} >
@@ -127,7 +123,6 @@ const HeaderForm = ({onCompany,
                     </StyledNavbarLi>
                 </StyledNavbarUl>
             </StyledNavCollapse>
-            {menuState === true ? 
             <StyledNavCollapse2 style={{display:'block'}} > 
                 <StyledNavbarUl>
                     <StyledNavbarLi onMouseLeave={onNotCompany} onMouseEnter={onCompany} >
@@ -220,7 +215,7 @@ const HeaderForm = ({onCompany,
                         </a>
                     </StyledNavbarLi>
                 </StyledNavbarUl>
-            </StyledNavCollapse2>: null }
+            </StyledNavCollapse2>       
         </StyledNavbar>
     
     

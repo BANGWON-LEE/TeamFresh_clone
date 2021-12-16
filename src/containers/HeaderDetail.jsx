@@ -1,48 +1,38 @@
 // <HeaderDetail.jsx>는 웹페이지 상단의 header 부분을 관리하는 컴포넌트.
 import React from "react";
 import { useState } from "react";
-import { withRouter } from "react-router";
 import HeaderForm from "../components/header/HeaderForm";
 
 
 function HeaderDetail() {
+    // HeaderDetail은 페이지 상단 Header 메뉴들의 동작을 관리하는 목적으로 만들어졌다. 
 
-    const [menuState, setMenuState] = useState(false);
-    const [menuNum, setMenuNum] = useState(0);
-    const [companyMenu, setCompanyMenu] = useState(false);
-    const [businessMenu, setBusinessMenu] = useState(false);
-    const [noticeMenu, setNoticeMenu] = useState(false);
+    const [companyMenu, setCompanyMenu] = useState(false); //회사소개, 처음에는 false로 되어있어 회사소개 메뉴의 하위 메뉴들이 보이지 않도록 한다. 
+    const [businessMenu, setBusinessMenu] = useState(false); //사업소개, 설명은 위와 같다. 
+    const [noticeMenu, setNoticeMenu] = useState(false); // 공지사항, 설명은 위와 같다.
 
-    function menuBtn(){
-        setMenuNum(menuNum + 1)
-        if(menuNum % 2 === 0 ){
-        setMenuState(true);
-        } else {
-            setMenuState(false);
-        }
-    }
 
-    function onNotCompany(){
-        setCompanyMenu(false);  
-    }
-
-    function onCompany(){
+    function onCompany(){ //companyMenu의 상태가 true로 바뀌도록 해준다. 
         setCompanyMenu(true); 
     }
 
-    function onNotBusiness(){
+    function onNotCompany(){ //companyMenu의 상태가 true인 것을 다시 false로 바뀌도록 해준다.
+        setCompanyMenu(false);  
+    }
+
+    function onNotBusiness(){ //businessMenu의 상태가 true로 바뀌도록 해준다.
         setBusinessMenu(false);  
     }
 
-    function onBusiness(){
+    function onBusiness(){ //businessMenu의 상태가 true인 것을 다시 false로 바뀌도록 해준다.
         setBusinessMenu(true); 
     }
 
-    function onNotNotice(){
+    function onNotNotice(){ //noticeMenu 상태가 true로 바뀌도록 해준다.
         setNoticeMenu(false);  
     }
 
-    function onNotice(){
+    function onNotice(){ //noticeMenu 상태가 true인 것을 다시 false로 바뀌도록 해준다.
         setNoticeMenu(true); 
     }
 
@@ -53,7 +43,7 @@ function HeaderDetail() {
     //삼항연산자를 사용하여 useState가 true일 경우에는 dropMenu가 보이고 false일 때는 보이지 않는다. 
     //2021-10-29
     
-   
+
     
 
     return(
@@ -67,11 +57,14 @@ function HeaderDetail() {
             companyMenu={companyMenu}
             businessMenu={businessMenu}
             noticeMenu={noticeMenu}
-            menuBtn={menuBtn}
-            menuState={menuState}
+            
         />
     )
 
 };
 
-export default withRouter(HeaderDetail);
+export default HeaderDetail;
+// by 이방원
+// 이전에 withRouter로 export 했지만 history 또는 Link를 사용하여 페이지를 이동하지 않기 때문에
+// 수정하였다.
+// 2021-11-15
