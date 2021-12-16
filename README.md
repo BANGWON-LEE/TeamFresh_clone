@@ -6,4 +6,4 @@
 ##### containers폴더 파일은 상태를 관리해주는 역할을 합니다.
 ##### data폴더의 BoradData.js 파일은 공지사항란의 내용을 불러오기 위해 생성하였습니다.
 
->>>>>>> bdce7b7b570f21a2b06eca0ac101401fb1eefd32
+
